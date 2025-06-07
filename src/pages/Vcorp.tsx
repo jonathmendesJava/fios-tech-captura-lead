@@ -16,7 +16,7 @@ const Vcorp = () => {
       <Header />
       <ServiceForm
         title="Vcorp"
-        description="Solicite uma proposta para soluções corporativas integradas de gestão e comunicação empresarial."
+        description="Cadastro de dados empresariais para a linha de produtos Vcorp - soluções corporativas integradas de gestão e comunicação."
         webhookUrl="https://hook.us1.make.com/hkdry75vfu8g5jchdjnxri1zxiafxkkl"
         onSuccess={() => setShowSuccess(true)}
       />

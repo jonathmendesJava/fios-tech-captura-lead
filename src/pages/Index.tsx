@@ -12,11 +12,11 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Soluções Tecnológicas
-              <span className="text-primary block">para sua Empresa</span>
+              Sistema Interno
+              <span className="text-primary block">Fios Tecnologia</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Conecte sua empresa ao futuro digital com nossas soluções especializadas em conectividade, infraestrutura e tecnologia corporativa.
+              Ferramenta interna para cadastro e processamento de dados empresariais dos nossos clientes e prospects.
             </p>
           </div>
         </div>
@@ -27,17 +27,17 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Nossos Serviços
+              Linhas de Produto
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Escolha a solução ideal para impulsionar os resultados da sua empresa
+              Selecione a linha de produto para cadastrar os dados do cliente
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <ServiceCard
               title="ComFast"
-              description="Soluções rápidas e eficientes para conectividade empresarial com alta performance."
+              description="Cadastro de clientes para soluções de conectividade empresarial de alta performance."
               href="/comfast"
               color="primary"
               icon={
@@ -53,7 +53,7 @@ const Index = () => {
 
             <ServiceCard
               title="Fios"
-              description="Infraestrutura de fibra óptica e cabeamento estruturado para máxima estabilidade."
+              description="Cadastro de clientes para infraestrutura de fibra óptica e cabeamento estruturado."
               href="/fios"
               color="accent"
               icon={
@@ -75,7 +75,7 @@ const Index = () => {
 
             <ServiceCard
               title="Vcorp"
-              description="Soluções corporativas integradas para gestão e comunicação empresarial avançada."
+              description="Cadastro de clientes para soluções corporativas integradas de gestão e comunicação."
               href="/vcorp"
               color="secondary"
               icon={
@@ -98,28 +98,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Info Section */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto animate-fade-in">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Pronto para transformar sua empresa?
+              Sistema de Cadastro Automatizado
             </h3>
             <p className="text-lg text-muted-foreground mb-8">
-              Nossa equipe especializada está pronta para desenvolver a solução perfeita para suas necessidades tecnológicas.
+              Utilize o CNPJ para preenchimento automático dos dados empresariais e agilize o processo de cadastro interno.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
               <div className="bg-background rounded-lg p-4 shadow-sm">
-                <span className="text-2xl mb-2 block">🚀</span>
-                <span className="font-semibold">Rápida Implementação</span>
+                <span className="text-2xl mb-2 block">🔍</span>
+                <span className="font-semibold">Consulta Automática</span>
               </div>
               <div className="bg-background rounded-lg p-4 shadow-sm">
-                <span className="text-2xl mb-2 block">💡</span>
-                <span className="font-semibold">Suporte Especializado</span>
+                <span className="text-2xl mb-2 block">📋</span>
+                <span className="font-semibold">Dados Completos</span>
               </div>
               <div className="bg-background rounded-lg p-4 shadow-sm">
-                <span className="text-2xl mb-2 block">📈</span>
-                <span className="font-semibold">Resultados Garantidos</span>
+                <span className="text-2xl mb-2 block">⚡</span>
+                <span className="font-semibold">Processo Ágil</span>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ const Index = () => {
       <footer className="bg-foreground text-background py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm opacity-80">
-            © 2024 Fios Tecnologia. Todos os direitos reservados.
+            © 2024 Fios Tecnologia - Sistema Interno
           </p>
         </div>
       </footer>

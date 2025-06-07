@@ -16,7 +16,7 @@ const Fios = () => {
       <Header />
       <ServiceForm
         title="Fios"
-        description="Solicite uma proposta para infraestrutura de fibra óptica e cabeamento estruturado para sua empresa."
+        description="Cadastro de dados empresariais para a linha de produtos Fios - infraestrutura de fibra óptica e cabeamento estruturado."
         webhookUrl="https://hook.us1.make.com/vpdwed3kowfyjint51jfscdes1xvll14"
         onSuccess={() => setShowSuccess(true)}
       />
