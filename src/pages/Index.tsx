@@ -4,37 +4,50 @@ import ServiceCard from "@/components/ServiceCard";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Tech background elements */}
+      <div className="absolute inset-0 tech-grid opacity-30"></div>
+      <div className="absolute inset-0 tech-particles"></div>
+      
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-background via-background to-muted/20">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative pt-24 pb-16 px-4">
+        <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Sistema Interno
-              <span className="text-primary block">Fios Tecnologia</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+              <span className="block mb-2">Sistema Interno</span>
+              <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-float">
+                Fios Tecnologia
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
               Ferramenta interna para cadastro e processamento de dados empresariais dos nossos clientes e prospects.
             </p>
+            
+            {/* Floating tech elements */}
+            <div className="absolute top-10 left-10 w-20 h-20 border border-primary/20 rounded-full animate-float opacity-20"></div>
+            <div className="absolute top-20 right-20 w-12 h-12 border border-secondary/20 rounded-lg rotate-45 animate-float opacity-30" style={{animationDelay: '2s'}}></div>
+            <div className="absolute bottom-10 left-1/4 w-16 h-16 border border-primary/15 rounded-full animate-float opacity-25" style={{animationDelay: '4s'}}></div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 px-4">
+        <div className="container mx-auto relative z-10">
           <div className="text-center mb-12 animate-slide-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Linhas de Produto
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Linhas de Produto
+              </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Selecione a linha de produto para cadastrar os dados do cliente
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <ServiceCard
               title="ComFast"
               description="Cadastro de clientes para soluções de conectividade empresarial de alta performance."
@@ -99,27 +112,30 @@ const Index = () => {
       </section>
 
       {/* Info Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto animate-fade-in">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Sistema de Cadastro Automatizado
+      <section className="relative py-16 px-4">
+        <div className="container mx-auto text-center relative z-10">
+          <div className="max-w-3xl mx-auto animate-fade-in glass-effect rounded-2xl p-8 border border-primary/10">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4">
+              <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
+                Sistema de Cadastro Automatizado
+              </span>
             </h3>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
               Utilize o CNPJ para preenchimento automático dos dados empresariais e agilize o processo de cadastro interno.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
-              <div className="bg-background rounded-lg p-4 shadow-sm">
-                <span className="text-2xl mb-2 block">🔍</span>
-                <span className="font-semibold">Consulta Automática</span>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+              <div className="glass-effect rounded-lg p-4 hover:bg-primary/5 transition-all duration-300 group">
+                <span className="text-2xl mb-2 block group-hover:scale-110 transition-transform duration-300">🔍</span>
+                <span className="font-semibold text-primary">Consulta Automática</span>
               </div>
-              <div className="bg-background rounded-lg p-4 shadow-sm">
-                <span className="text-2xl mb-2 block">📋</span>
-                <span className="font-semibold">Dados Completos</span>
+              <div className="glass-effect rounded-lg p-4 hover:bg-secondary/5 transition-all duration-300 group">
+                <span className="text-2xl mb-2 block group-hover:scale-110 transition-transform duration-300">📋</span>
+                <span className="font-semibold text-secondary">Dados Completos</span>
               </div>
-              <div className="bg-background rounded-lg p-4 shadow-sm">
-                <span className="text-2xl mb-2 block">⚡</span>
-                <span className="font-semibold">Processo Ágil</span>
+              <div className="glass-effect rounded-lg p-4 hover:bg-primary/5 transition-all duration-300 group">
+                <span className="text-2xl mb-2 block group-hover:scale-110 transition-transform duration-300">⚡</span>
+                <span className="font-semibold text-primary">Processo Ágil</span>
               </div>
             </div>
           </div>
@@ -127,10 +143,10 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-8">
+      <footer className="relative bg-card/50 backdrop-blur-sm border-t border-primary/20 py-8 mt-16">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm opacity-80">
-            © 2024 Fios Tecnologia - Sistema Interno
+          <p className="text-sm text-muted-foreground">
+            © 2024 <span className="text-primary font-semibold">Fios Tecnologia</span> - Sistema Interno
           </p>
         </div>
       </footer>
