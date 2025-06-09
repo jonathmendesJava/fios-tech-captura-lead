@@ -3,21 +3,19 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 interface CnpjData {
+  dt_inicio: string;
+  cnpj: string;
   razao_social: string;
-  nome_fantasia?: string;
-  logradouro: string;
-  numero: string;
-  bairro: string;
-  municipio: string;
-  uf: string;
-  cep: string;
-  telefone1?: string;
-  telefone2?: string;
-  email?: string;
-  cnae_fiscal_principal?: {
-    codigo: string;
-    descricao: string;
-  };
+  end_tipo: string;
+  end_logradouro: string;
+  end_numero: string;
+  end_bairro: string;
+  end_cidade: string;
+  end_uf: string;
+  end_cep: string;
+  email: string;
+  tel_ddd: string;
+  tel_numero: string;
 }
 
 export const useCnpjLookup = () => {
@@ -41,7 +39,15 @@ export const useCnpjLookup = () => {
     try {
       console.log("Consultando CNPJ:", cleanCnpj);
       
-      const response = await fetch(`https://publica.cnpj.ws/cnpj/${cleanCnpj}`);
+      const response = await fetch("https://hook.us1.make.com/eaug2blo4pmkclwib9a8k93koin0q8y0", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          cnpj: cleanCnpj
+        }),
+      });
       
       if (!response.ok) {
         throw new Error("Erro na consulta do CNPJ");
@@ -49,7 +55,7 @@ export const useCnpjLookup = () => {
       
       const data = await response.json();
       
-      if (data.status === 400 || data.message) {
+      if (!data || !data.razao_social) {
         toast({
           title: "CNPJ não encontrado",
           description: "Verifique o CNPJ digitado e tente novamente.",

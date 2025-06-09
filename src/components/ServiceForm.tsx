@@ -28,6 +28,7 @@ interface FormData {
   telefone: string;
   email: string;
   observacoes: string;
+  dataInicioAtividade: string;
 }
 
 const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormProps) => {
@@ -44,6 +45,7 @@ const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormP
     telefone: "",
     email: "",
     observacoes: "",
+    dataInicioAtividade: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,18 +62,25 @@ const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormP
 
     const data = await lookupCnpj(formData.cnpj);
     if (data) {
+      // Formatando telefone completo
+      const telefoneCompleto = data.tel_ddd && data.tel_numero ? 
+        `(${data.tel_ddd}) ${data.tel_numero}` : "";
+      
+      // Montando endereço completo
+      const enderecoCompleto = `${data.end_tipo || ""} ${data.end_logradouro || ""}`.trim();
+      
       setFormData(prev => ({
         ...prev,
         razaoSocial: data.razao_social || "",
-        nomeFantasia: data.nome_fantasia || "",
-        logradouro: data.logradouro || "",
-        numero: data.numero || "",
-        bairro: data.bairro || "",
-        municipio: data.municipio || "",
-        uf: data.uf || "",
-        cep: data.cep || "",
-        telefone: data.telefone1 || data.telefone2 || "",
+        logradouro: enderecoCompleto,
+        numero: data.end_numero?.toString() || "",
+        bairro: data.end_bairro || "",
+        municipio: data.end_cidade || "",
+        uf: data.end_uf || "",
+        cep: data.end_cep?.toString() || "",
+        telefone: telefoneCompleto,
         email: data.email || "",
+        dataInicioAtividade: data.dt_inicio || "",
       }));
     }
   };
@@ -111,6 +120,7 @@ const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormP
           cnpj: formData.cnpj,
           razao_social: formData.razaoSocial,
           nome_fantasia: formData.nomeFantasia,
+          data_inicio_atividade: formData.dataInicioAtividade,
           endereco: {
             logradouro: formData.logradouro,
             numero: formData.numero,
@@ -187,11 +197,11 @@ const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormP
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="nomeFantasia">Nome Fantasia</Label>
+                  <Label htmlFor="dataInicioAtividade">Data Início Atividade</Label>
                   <Input
-                    id="nomeFantasia"
-                    value={formData.nomeFantasia}
-                    onChange={(e) => setFormData(prev => ({ ...prev, nomeFantasia: e.target.value }))}
+                    id="dataInicioAtividade"
+                    value={formData.dataInicioAtividade}
+                    onChange={(e) => setFormData(prev => ({ ...prev, dataInicioAtividade: e.target.value }))}
                     disabled={isLoading}
                   />
                 </div>
