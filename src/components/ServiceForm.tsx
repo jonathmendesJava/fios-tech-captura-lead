@@ -2,33 +2,18 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { useCnpjLookup } from "@/hooks/useCnpjLookup";
 import { useToast } from "@/hooks/use-toast";
+import { FormData } from "@/types/FormData";
+import CompanyFields from "@/components/form/CompanyFields";
+import AddressFields from "@/components/form/AddressFields";
+import ContactFields from "@/components/form/ContactFields";
 
 interface ServiceFormProps {
   title: string;
   description: string;
   webhookUrl: string;
   onSuccess: () => void;
-}
-
-interface FormData {
-  cnpj: string;
-  razaoSocial: string;
-  nomeFantasia: string;
-  logradouro: string;
-  numero: string;
-  bairro: string;
-  municipio: string;
-  uf: string;
-  cep: string;
-  telefone: string;
-  email: string;
-  observacoes: string;
-  dataInicioAtividade: string;
 }
 
 const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormProps) => {
@@ -168,140 +153,25 @@ const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormP
           </CardHeader>
           <CardContent className="space-y-6">
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="cnpj">CNPJ *</Label>
-                <Input
-                  id="cnpj"
-                  type="text"
-                  placeholder="00.000.000/0000-00"
-                  value={formData.cnpj}
-                  onChange={(e) => handleCnpjChange(e.target.value)}
-                  onBlur={handleCnpjBlur}
-                  maxLength={18}
-                  className="transition-all duration-200 focus:scale-[1.02]"
-                  disabled={isLoading}
-                />
-                {isLoading && (
-                  <p className="text-sm text-muted-foreground">Consultando CNPJ...</p>
-                )}
-              </div>
+              <CompanyFields
+                formData={formData}
+                setFormData={setFormData}
+                isLoading={isLoading}
+                onCnpjChange={handleCnpjChange}
+                onCnpjBlur={handleCnpjBlur}
+              />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="razaoSocial">Razão Social *</Label>
-                  <Input
-                    id="razaoSocial"
-                    value={formData.razaoSocial}
-                    onChange={(e) => setFormData(prev => ({ ...prev, razaoSocial: e.target.value }))}
-                    disabled={isLoading}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="dataInicioAtividade">Data Início Atividade</Label>
-                  <Input
-                    id="dataInicioAtividade"
-                    value={formData.dataInicioAtividade}
-                    onChange={(e) => setFormData(prev => ({ ...prev, dataInicioAtividade: e.target.value }))}
-                    disabled={isLoading}
-                  />
-                </div>
-              </div>
+              <AddressFields
+                formData={formData}
+                setFormData={setFormData}
+                isLoading={isLoading}
+              />
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="md:col-span-2 space-y-2">
-                  <Label htmlFor="logradouro">Logradouro</Label>
-                  <Input
-                    id="logradouro"
-                    value={formData.logradouro}
-                    onChange={(e) => setFormData(prev => ({ ...prev, logradouro: e.target.value }))}
-                    disabled={isLoading}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="numero">Número</Label>
-                  <Input
-                    id="numero"
-                    value={formData.numero}
-                    onChange={(e) => setFormData(prev => ({ ...prev, numero: e.target.value }))}
-                    disabled={isLoading}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="bairro">Bairro</Label>
-                  <Input
-                    id="bairro"
-                    value={formData.bairro}
-                    onChange={(e) => setFormData(prev => ({ ...prev, bairro: e.target.value }))}
-                    disabled={isLoading}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="municipio">Cidade</Label>
-                  <Input
-                    id="municipio"
-                    value={formData.municipio}
-                    onChange={(e) => setFormData(prev => ({ ...prev, municipio: e.target.value }))}
-                    disabled={isLoading}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="uf">UF</Label>
-                  <Input
-                    id="uf"
-                    value={formData.uf}
-                    onChange={(e) => setFormData(prev => ({ ...prev, uf: e.target.value }))}
-                    disabled={isLoading}
-                    maxLength={2}
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="cep">CEP</Label>
-                  <Input
-                    id="cep"
-                    value={formData.cep}
-                    onChange={(e) => setFormData(prev => ({ ...prev, cep: e.target.value }))}
-                    disabled={isLoading}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="telefone">Telefone</Label>
-                  <Input
-                    id="telefone"
-                    value={formData.telefone}
-                    onChange={(e) => setFormData(prev => ({ ...prev, telefone: e.target.value }))}
-                    disabled={isLoading}
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">E-mail</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                  disabled={isLoading}
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="observacoes">Observações (opcional)</Label>
-                <Textarea
-                  id="observacoes"
-                  placeholder="Informações adicionais sobre sua necessidade..."
-                  value={formData.observacoes}
-                  onChange={(e) => setFormData(prev => ({ ...prev, observacoes: e.target.value }))}
-                  disabled={isLoading}
-                  rows={3}
-                />
-              </div>
+              <ContactFields
+                formData={formData}
+                setFormData={setFormData}
+                isLoading={isLoading}
+              />
 
               <Button 
                 type="submit" 
