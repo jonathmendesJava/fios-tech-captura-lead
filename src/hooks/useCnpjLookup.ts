@@ -39,7 +39,7 @@ export const useCnpjLookup = () => {
     try {
       console.log("Consultando CNPJ:", cleanCnpj);
       
-      const response = await fetch("https://hook.us1.make.com/eaug2blo4pmkclwib9a8k93koin0q8y0", {
+      const response = await fetch("https://hook.us1.make.com/atcem0u644ck9ibipd7awjqhqghob94f", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
