@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3 group">
           <img 
-            src="/placeholder.svg" 
+            src="src/img/ChatGPT Image 9 de jun. de 2025, 10_14_15.png" 
             alt="Fios Tecnologia Logo" 
             className="h-6 sm:h-8 w-auto transition-all duration-300 group-hover:scale-105"
           />
