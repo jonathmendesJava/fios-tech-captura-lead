@@ -5,9 +5,9 @@ import ServiceCard from "@/components/ServiceCard";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Tech background elements */}
-      <div className="absolute inset-0 tech-grid opacity-30"></div>
-      <div className="absolute inset-0 tech-particles"></div>
+      {/* Tech snake background animation */}
+      <div className="tech-snake-bg"></div>
+      <div className="tech-dots"></div>
       
       <Header />
       

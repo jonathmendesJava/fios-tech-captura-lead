@@ -6,15 +6,12 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-primary/20">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3 group">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center group-hover:scale-105 transition-all duration-300 animate-pulse-glow">
-            <span className="text-primary-foreground font-bold text-xl">F</span>
-          </div>
           <img 
             src="/placeholder.svg" 
             alt="Fios Tecnologia Logo" 
-            className="h-8 w-auto transition-all duration-300 group-hover:scale-105"
+            className="h-6 sm:h-8 w-auto transition-all duration-300 group-hover:scale-105"
           />
-          <span className="text-xl font-bold text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <span className="text-lg sm:text-xl font-bold text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Fios Tecnologia
           </span>
         </Link>
