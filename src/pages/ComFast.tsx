@@ -16,7 +16,7 @@ const ComFast = () => {
       <Header />
       <ServiceForm
         title="ComFast"
-        description="Cadastro de dados empresariais para a linha de produtos ComFast - soluções de conectividade empresarial."
+        description="Solicite seu orçamento para internet de alta velocidade empresarial com tecnologia de ponta e suporte especializado."
         webhookUrl="https://hook.us1.make.com/6psmvt9kr4r6hhujjt1ezblprjtlu5kl"
         onSuccess={() => setShowSuccess(true)}
       />

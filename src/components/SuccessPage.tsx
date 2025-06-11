@@ -13,19 +13,19 @@ const SuccessPage = () => {
               <span className="text-5xl">✅</span>
             </div>
             <CardTitle className="text-3xl font-bold text-primary">
-              Dados cadastrados com sucesso!
+              Solicitação enviada com sucesso!
             </CardTitle>
             <CardDescription className="text-lg mt-4">
-              Os dados foram enviados para processamento interno no sistema.
+              Recebemos sua solicitação de orçamento e nossa equipe entrará em contato em breve.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="bg-muted/50 rounded-lg p-6">
-              <h3 className="font-semibold text-lg mb-2">Status do processamento:</h3>
+              <h3 className="font-semibold text-lg mb-2">Próximos passos:</h3>
               <ul className="text-left space-y-2 text-muted-foreground">
-                <li>• Dados validados e enviados</li>
-                <li>• Processamento automático iniciado</li>
-                <li>• Cliente cadastrado no sistema interno</li>
+                <li>• Análise técnica da sua solicitação</li>
+                <li>• Elaboração de proposta personalizada</li>
+                <li>• Contato da nossa equipe comercial</li>
               </ul>
             </div>
             
@@ -37,7 +37,7 @@ const SuccessPage = () => {
               </Link>
               <Link to="/">
                 <Button className="w-full sm:w-auto">
-                  Novo Cadastro
+                  Nova Solicitação
                 </Button>
               </Link>
             </div>

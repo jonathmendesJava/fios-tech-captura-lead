@@ -16,13 +16,13 @@ const Index = () => {
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto animate-fade-in">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              <span className="block mb-2">Sistema Interno</span>
+              <span className="block mb-2">Solicite seu Orçamento</span>
               <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-float">
                 Fios Tecnologia
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Ferramenta interna para cadastro e processamento de dados empresariais dos nossos clientes e prospects.
+              Preencha seus dados empresariais e receba uma proposta personalizada para sua empresa com as melhores soluções em conectividade.
             </p>
             
             {/* Floating tech elements */}
@@ -39,18 +39,18 @@ const Index = () => {
           <div className="text-center mb-12 animate-slide-up">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Linhas de Produto
+                Nossos Serviços
               </span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Selecione a linha de produto para cadastrar os dados do cliente
+              Escolha o serviço que sua empresa precisa e solicite seu orçamento personalizado
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <ServiceCard
               title="ComFast"
-              description="Cadastro de clientes para soluções de conectividade empresarial de alta performance."
+              description="Internet de alta velocidade para sua empresa com tecnologia de ponta e suporte especializado 24/7."
               href="/comfast"
               color="primary"
               icon={
@@ -66,7 +66,7 @@ const Index = () => {
 
             <ServiceCard
               title="Fios"
-              description="Cadastro de clientes para infraestrutura de fibra óptica e cabeamento estruturado."
+              description="Internet corporativa via fibra óptica para empresas que precisam de máxima performance e estabilidade."
               href="/fios"
               color="accent"
               icon={
@@ -88,7 +88,7 @@ const Index = () => {
 
             <ServiceCard
               title="Vcorp"
-              description="Cadastro de clientes para soluções corporativas integradas de gestão e comunicação."
+              description="Soluções completas para provedores de internet (ISPs) com tecnologia e suporte especializado."
               href="/vcorp"
               color="secondary"
               icon={
@@ -117,25 +117,25 @@ const Index = () => {
           <div className="max-w-3xl mx-auto animate-fade-in glass-effect rounded-2xl p-8 border border-primary/10">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4">
               <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
-                Sistema de Cadastro Automatizado
+                Processo Rápido e Fácil
               </span>
             </h3>
             <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
-              Utilize o CNPJ para preenchimento automático dos dados empresariais e agilize o processo de cadastro interno.
+              Utilize o CNPJ da sua empresa para preenchimento automático dos dados e receba sua proposta rapidamente.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
               <div className="glass-effect rounded-lg p-4 hover:bg-primary/5 transition-all duration-300 group">
                 <span className="text-2xl mb-2 block group-hover:scale-110 transition-transform duration-300">🔍</span>
-                <span className="font-semibold text-primary">Consulta Automática</span>
+                <span className="font-semibold text-primary">Preenchimento Automático</span>
               </div>
               <div className="glass-effect rounded-lg p-4 hover:bg-secondary/5 transition-all duration-300 group">
                 <span className="text-2xl mb-2 block group-hover:scale-110 transition-transform duration-300">📋</span>
-                <span className="font-semibold text-secondary">Dados Completos</span>
+                <span className="font-semibold text-secondary">Proposta Personalizada</span>
               </div>
               <div className="glass-effect rounded-lg p-4 hover:bg-primary/5 transition-all duration-300 group">
                 <span className="text-2xl mb-2 block group-hover:scale-110 transition-transform duration-300">⚡</span>
-                <span className="font-semibold text-primary">Processo Ágil</span>
+                <span className="font-semibold text-primary">Resposta Rápida</span>
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ const Index = () => {
       <footer className="relative bg-card/50 backdrop-blur-sm border-t border-primary/20 py-8 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 <span className="text-primary font-semibold">Fios Tecnologia</span> - Sistema Interno
+            © 2024 <span className="text-primary font-semibold">Fios Tecnologia</span> - Conectando sua empresa ao futuro
           </p>
         </div>
       </footer>

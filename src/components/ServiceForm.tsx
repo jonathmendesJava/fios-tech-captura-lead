@@ -85,14 +85,14 @@ const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormP
     if (!formData.razaoSocial) {
       toast({
         title: "Dados incompletos",
-        description: "Por favor, consulte o CNPJ primeiro.",
+        description: "Por favor, consulte o CNPJ primeiro para prosseguir.",
         variant: "destructive",
       });
       return;
     }
 
     setIsSubmitting(true);
-    console.log("Enviando dados para:", webhookUrl);
+    console.log("Enviando solicitação de orçamento para:", webhookUrl);
 
     try {
       const response = await fetch(webhookUrl, {
@@ -123,19 +123,19 @@ const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormP
         }),
       });
 
-      console.log("Resposta do webhook:", response.status);
+      console.log("Resposta da solicitação:", response.status);
       
       toast({
-        title: "✅ Enviado com sucesso!",
-        description: "Seus dados foram enviados. Nossa equipe entrará em contato em breve.",
+        title: "✅ Solicitação enviada com sucesso!",
+        description: "Recebemos sua solicitação de orçamento. Nossa equipe entrará em contato em breve.",
       });
       
       onSuccess();
     } catch (error) {
-      console.error("Erro ao enviar dados:", error);
+      console.error("Erro ao enviar solicitação:", error);
       toast({
         title: "Erro no envio",
-        description: "Não foi possível enviar os dados. Tente novamente.",
+        description: "Não foi possível enviar sua solicitação. Tente novamente.",
         variant: "destructive",
       });
     } finally {
@@ -178,7 +178,7 @@ const ServiceForm = ({ title, description, webhookUrl, onSuccess }: ServiceFormP
                 className="w-full text-lg py-6 transition-all duration-300 hover:scale-[1.02]"
                 disabled={isSubmitting || isLoading}
               >
-                {isSubmitting ? "Enviando..." : "Enviar Solicitação"}
+                {isSubmitting ? "Enviando Solicitação..." : "Solicitar Orçamento"}
               </Button>
             </form>
           </CardContent>
