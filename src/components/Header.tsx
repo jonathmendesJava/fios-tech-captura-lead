@@ -1,5 +1,12 @@
 
 import { Link } from "react-router-dom";
+import { Menu } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -16,6 +23,7 @@ const Header = () => {
           </span>
         </Link>
         
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:glow">
             Home
@@ -30,6 +38,37 @@ const Header = () => {
             Vcorp
           </Link>
         </nav>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="p-2 hover:bg-primary/10 rounded-md transition-colors">
+              <Menu className="h-6 w-6 text-foreground" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-48 bg-background border border-primary/20">
+              <DropdownMenuItem asChild>
+                <Link to="/" className="flex items-center w-full px-2 py-2 text-foreground hover:text-primary transition-colors">
+                  Home
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/comfast" className="flex items-center w-full px-2 py-2 text-foreground hover:text-primary transition-colors">
+                  ComFast
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/fios" className="flex items-center w-full px-2 py-2 text-foreground hover:text-primary transition-colors">
+                  Fios
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/vcorp" className="flex items-center w-full px-2 py-2 text-foreground hover:text-primary transition-colors">
+                  Vcorp
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </header>
   );
